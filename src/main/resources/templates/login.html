@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login</title>
+<meta charset="UTF-8" />
+<style>
+        body {
+            background-color: #f0fff0; /* verde claro */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+ 
+        .login-container {
+            background-color: #e0ffe0;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+ 
+        h2 {
+            color: #2e8b57;
+        }
+ 
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #006400;
+        }
+ 
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #90ee90;
+        }
+ 
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #32cd32;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+ 
+        button:hover {
+            background-color: #228b22;
+        }
+ 
+        p {
+            margin-top: 15px;
+            color: red;
+            font-weight: bold;
+        }
+</style>
+</head>
+<body>
+<div class="login-container">
+<h2>Login</h2>
+<form method="post" th:action="@{/login}">
+<label for="username">Usuário:</label>
+<input type="text" id="username" name="username">
+<label for="password">Senha:</label>
+<input type="password" id="password" name="password">
+<button type="submit">Entrar</button>
+</form>
+ 
+        <p th:if="${param.error}">Login inválido</p>
+<p th:if="${param.logout}" style="color: green;">Logout efetuado com sucesso</p>
+</div>
+</body>
+</html>
