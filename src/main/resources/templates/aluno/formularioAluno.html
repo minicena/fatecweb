@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4c93af;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin: 10px 0 5px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            background-color: #4c93af;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #4c5eaf;
+        }
+
+    </style>
+    <title>Formulário de Alunos</title>
+</head>
+<body>
+    <h1>Cadastrar Aluno</h1>
+    <form th:action="@{/alunos/salvar}" method="POST" th:object="${aluno}">
+        <label for="idAluno">ID Aluno:</label>
+        <input type="text" id="idAluno" th:field="*{idAluno}" readonly />
+        
+        <label for="nomeAluno">Nome:</label>
+        <input type="text" id="nomeAluno" th:field="*{nomeAluno}" />
+
+        <label for="enderecoAluno">Endereço:</label>
+        <input type="text" id="enderecoAluno" th:field="*{enderecoAluno}" />
+
+        <label for="cpfAluno">CPF:</label>
+        <input type="text" id="cpfAluno" th:field="*{cpfAluno}" />
+
+        <label for="telefoneAluno">Telefone:</label>
+        <input type="text" id="telefoneAluno" th:field="*{telefoneAluno}" />
+
+        <label for="raAluno">RA:</label>
+        <input type="text" id="raAluno" th:field="*{raAluno}" />
+
+        <label for="curso">Curso</label>
+        <select th:field="*{curso}">
+            <option value="" disabled selected>Selecione o curso</option>
+            <option th:each="curso : ${cursos}" 
+                    th:text="${curso.nomeCurso}" 
+                    th:value="${curso.idCurso}"></option>
+        </select>
+        
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>

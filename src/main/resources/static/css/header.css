@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-neutral-dark);
+    -webkit-box-shadow: -4px 7px 21px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 7px 21px -4px rgba(0,0,0,0.75);
+    box-shadow: -4px 7px 21px -4px rgba(0,0,0,0.75);
+}

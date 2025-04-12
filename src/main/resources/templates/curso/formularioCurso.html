@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4c93af;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        label {
+            font-size: 1.1em;
+            margin: 10px 0 5px;
+            display: block;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 1em;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2em;
+            background-color: #934caf;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #67357a;
+        }
+    </style>
+    <title>Formulário de cursos</title>
+</head>
+<body>
+    <h1>Cadastrar curso</h1>
+    <form th:action="@{/cursos/salvar}" method="POST" th:object="${curso}">
+        <label for="idCurso">ID curso:</label>
+        <input type="text" id="idCurso" th:field="*{idCurso}" readonly />
+        
+        <label for="nomeCurso">Nome:</label>
+        <input type="text" id="nomeCurso" th:field="*{nomeCurso}" />
+
+        <label for="chCurso">Carga horária do curso:</label>
+        <input type="text" id="chCurso" th:field="*{chCurso}" />
+
+        <label for="periodoCurso">Período:</label>
+        <input type="text" id="periodoCurso" th:field="*{periodoCurso}" />
+
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+</html>

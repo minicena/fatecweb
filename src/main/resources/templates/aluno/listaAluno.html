@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .register {
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 1px solid #4c93af;
+            color: #4c93af;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+
+        .register:hover {
+            background-color: #4c5eaf;
+            border: 1px solid #4c5eaf;
+            color: white;
+        }
+
+        /* Estilo da Tabela */
+        .alunos-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Estilo do Cabeçalho da Tabela */
+        .alunos-table th {
+            background-color: #4c93af;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            font-size: 1.1em;
+            border-bottom: 1px solid #ddd;
+        }
+
+        td {
+            background-color: #fafafa;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover td {
+            background-color: #f1f1f1;
+        }
+
+        /* Estilo para os Links de Ação */
+        .btn-edit, .btn-delete {
+            padding: 6px 12px;
+            margin: 0 5px;
+            font-size: 1em;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .btn-edit {
+            background-color: #4CAF50;
+        }
+
+        .btn-edit:hover {
+            background-color: #45a049;
+        }
+
+        .btn-delete {
+            background-color: #f44336;
+        }
+
+        .btn-delete:hover {
+            background-color: #e53935;
+        }
+
+    </style>
+    <title>Lista de Alunos</title>
+</head>
+<body>
+    <h1>Lista de Alunos</h1>
+    <h2><a href="/alunos/criar" class="register">Cadastrar</a></h2>
+
+    <!-- Tabela para exibir os alunos cadastrados -->
+    <table class="alunos-table">
+        <tr>
+            <th colspan="8">Lista de Alunos</th>
+        </tr>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Cpf</th>
+            <th>Telefone</th>
+            <th>RA</th>
+            <th>Curso</th>
+            <th colspan="2">Ações</th>
+        </tr>
+        <tr th:each="aluno : ${alunos}">
+            <td th:text="${aluno.idAluno}">*</td>
+            <td th:text="${aluno.nomeAluno}">*</td>
+            <td th:text="${aluno.enderecoAluno}">*</td>
+            <td th:text="${aluno.cpfAluno}">*</td>
+            <td th:text="${aluno.telefoneAluno}">*</td>
+            <td th:text="${aluno.raAluno}">*</td>
+            <td  th:text="${aluno.curso.nomeCurso}">*</td>
+            <td>
+                <a class="btn-edit" th:href="@{/alunos/editar/{id}(id=${aluno.idAluno})}">Editar</a>
+                <a class="btn-delete" th:href="@{/alunos/excluir/{id}(id=${aluno.idAluno})}">Excluir</a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
