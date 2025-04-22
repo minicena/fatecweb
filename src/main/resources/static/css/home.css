@@ -11,6 +11,11 @@
     border-radius: 1.5rem;
     margin-top: 2rem;
 
+    -webkit-box-shadow: -4px 7px 21px -4px rgba(0,0,0,0.75);
+    -moz-box-shadow: -4px 7px 21px -4px rgba(0,0,0,0.75);
+    box-shadow: -4px 7px 21px -4px rgba(0,0,0,0.75);
+
+
 }
 
 .buttons {
@@ -19,11 +24,24 @@
     justify-content: center;
 }
 
+.bg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    width: 100%; /* Ajuste conforme necessário */
+    min-height: 100vh;
+}
+
 
 @media (width >= 80em) {
     .navigation {
         width: 50%;
-
         padding: 5rem 2rem;
+    }
+
+    .bg {
+        height: 50%;
+        min-height: 10vh;
     }
 }
