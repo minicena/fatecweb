@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <title>Sistema FatecWeb</title>
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <title>FatecWeb</title>
 </head>
 <body>
     <div class="header">
         <h1>Sistema FatecWeb</h1>
     </div>
-    <div>
-    <h2><a href="/alunos/listar">Gerenciar Alunos</a></h2>
-    <h2><a href="/cursos/listar">Gerenciar Cursos</a></h2>
-    </div>
+        <div class="navigation">
+            <div class="buttons">
+                <a href="/alunos/listar" aria-label="Gerenciar Alunos" class="btn btn-md"></a>
+                <a href="/cursos/listar" aria-label="Gerenciar Cursos" class="btn btn-md"></a>
+            </div>
+        </div>
 </body>
 </html>

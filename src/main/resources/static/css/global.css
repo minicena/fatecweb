@@ -1,69 +1,37 @@
 :root {
 
     /*style fonts */
-    --font-primary: "Lilita One", sans-serif;
-    --font-secondary: "Roboto", sans-serif;
-    --tex-sm: 200;
-    --text-lg:400;
-    --text-xl:600;
+    --ff-sans: 'Inter', system-ui, sans-serif;
+    --fw-base: 400;
+    --fw-md: 500;
+    --fw-bold: 800;
 
     /*colors background*/  
     /* Cores Primárias (Azul e Tons Relacionados) */
-    --color-primary: #1a73e8; 
-    --color-primary-dark: #1557b0; 
-    --color-primary-light: #4d90fe; 
+    --bg-color: #09090B;
+    --surface-color: #18181B;
+    --stroke-color: #27272A;
+    --text-color-secondary: #A1A1AA;
+    --text-color-primary: #F4F4F5;
 
-    /* Cores Secundárias (Verde e Tons Relacionados) */
-    --color-secondary: #34a853; 
-    --color-secondary-dark: #2a7d3e; 
-    --color-secondary-light: #66bb6a;
+    --brand-gradient: #FC4A1A #F7B733;
+    --brand-color-primary: #F7B733;
+    --brand-color-secondary: #FC4A1A;
 
-    /* Cores de Fundo (Neutras e Suaves) */
-    --color-background: #ffffff;
-    --color-background-dark: #f8f9fa; 
-    --color-background-light: #f1f3f4; 
-
-    /* Cores de Texto (Contraste e Legibilidade) */
-    --color-text: #202124; 
-    --color-text-light: #5f6368; 
-    --color-text-lighter: #80868b; 
-    --color-text-inverse: #ffffff; 
-
-    /* Cores de Destaque (Laranja e Tons Relacionados) */
-    --color-accent: #fbbc04;
-    --color-accent-dark: #e2a703; 
-    --color-accent-light: #fdd663; 
-
-    /* Cores de Feedback (Sucesso, Aviso, Erro) */
-    --color-success: #34a853;
-    --color-warning: #fbbc04; 
-    --color-error: #d93025; 
-
-    /* Cores Neutras (Cinzas e Tons Relacionados) */
-    --color-neutral: #9aa0a6; 
-    --color-neutral-dark: #5f6368;
-    --color-neutral-light: #dadce0;
-
-    /* Cores de Bordas (Sutis e Elegantes) */
-    --color-border: #dadce0;
-    --color-border-dark: #bdc1c6; 
-    --color-border-light: #e8eaed;
 }
 
 body{
-    font-family: var(--font-secondary);
+    font-family: var(--ff-sans);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-h1{ 
-    font-family: var(--font-primary);
-    font-size: var(--font-lg);
+h1, h2{ 
+    line-height: 1.2;
+    color: var(--text-color-primary);
+    font-weight: var(--fw-bold);
+    letter-spacing: -0.04em;
 }
 
-h2{
-    font-family: var(--font-primary);
-    font-size: var(--font-sm);
-}
 
