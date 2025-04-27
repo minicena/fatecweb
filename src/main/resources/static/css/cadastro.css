@@ -1,15 +1,9 @@
-.app {
-    display: grid;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.login-container{
+.register-container{
     justify-self: center;
     align-self: center;
     overflow: auto;
 
-    & .login {
+    & .register {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -25,43 +19,13 @@
             padding: 1rem 1rem;
             justify-content: center;
         }
-
-        & p {
-            margin-top: 2rem;
-            text-align: center;
-            padding: 1rem 1rem;
-
-
-            &.form-error {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 8rem;
-                height: 3rem;
-                border-radius: 5px;
-                background: var(--text-color-primary);            
-                color: red;
-            }
-
-            &.form-success {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 8rem;
-                height: 3rem;
-                border-radius: 5px;
-                background: var(--text-color-primary);   
-                color: green;
-            }
-        }
     }
 
-    & .form-login {
+    & .form-register {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap:  .5rem;
-
 
             & input {
                 width: 100%;
@@ -72,12 +36,31 @@
                 transition: transform 250ms;
             }
 
-            & input:focus {
+            & input:focus, select:focus {
                 outline: none;
             }
 
             & input:hover {
                 transform: translateY(-2px);
+            }
+
+            & label {
+                margin-top: 1rem;
+                color: var(--text-color-primary);
+                font-size: 1.2rem;
+            }
+
+            & select {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+                margin-top: 1rem;
+                border-radius: 0.5rem;
+                border: 2px solid #ddd;
+                background: #eee;
+                padding: 10px;
+                transition: 0.4s;
             }
         }
 
@@ -87,7 +70,7 @@
         }
     }
 
-    & .btn-form {
+    & .btn-register {
         display: flex;
         gap: 1rem;
 
@@ -99,4 +82,3 @@
             }
      }
 }
-
