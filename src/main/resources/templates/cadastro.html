@@ -16,6 +16,12 @@
     <div class="app">
         <div class="register-container">
             <div class="register">
+                <div class="back">
+                   <a href="/login">
+                        <img src="/assets/arrow-left-02.svg" alt="Ícon de Voltar">
+                        <span>Voltar</span>  
+                    </a>               
+                </div>
                 <h2>Cadastro</h2>
                 <form th:action="@{/cadastro/salvar}" th:object="${usuario}" method="post" class="form-register">
                     <input type="text" id="loginUsuario" placeholder="usuario" th:field="*{loginUsuario}" required />

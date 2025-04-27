@@ -28,8 +28,8 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%); /* Centraliza horizontalmente */
-    width: 100%; /* Ajuste conforme necessário */
+    transform: translateX(-50%); 
+    width: 100%; 
     min-height: 100vh;
 }
 

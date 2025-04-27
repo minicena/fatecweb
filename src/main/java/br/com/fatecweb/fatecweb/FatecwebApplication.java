@@ -10,7 +10,6 @@ public class FatecwebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FatecwebApplication.class, args);
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		System.out.println("Senha: " + encoder.encode("123456"));
 	}
 
 }
